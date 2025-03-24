@@ -10,6 +10,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-satoshi);
   --font-header: var(--font-integral);
+  /* --breakpoint-xl: 90rem;
+  --container-xl: 90rem; */
+  /* --breakpoint-lg: 77.5rem;
+  --container-lg: 77.5rem;
+  --breakpoint-md: 77.5rem;
+  --container-lg: 77.5rem; */
 }
 
 /* @media (prefers-color-scheme: dark) {
