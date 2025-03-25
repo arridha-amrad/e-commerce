@@ -1,4 +1,5 @@
 import ProductDetail from "@/ProductDetail";
+import Tab from "@/Tab";
 
 function Page() {
   return (
@@ -17,6 +18,8 @@ function Page() {
         <p className="text-black">T-Shirts</p>
       </section>
       <ProductDetail />
+      <Tab />
+      <div className="min-h-screen"></div>
     </>
   );
 }

@@ -22,7 +22,7 @@ export default function SizeOptions() {
             className="group cursor-pointer flex items-center justify-center rounded-full appearance-none"
           >
             <div
-              className="w-full group-data-[checked]:font-medium flex font-light items-center justify-center h-full rounded-full px-8 py-3"
+              className="w-full group-data-[checked]:font-medium flex font-light items-center justify-center h-full rounded-full px-6 py-2"
               style={{
                 color: selected === size ? "#f0f0f0" : "#000",
                 background: selected === size ? "#000" : "#f0f0f0",

@@ -7,6 +7,7 @@ import SizeOptions from "./SizeOptions";
 import StarRating from "./StarRating";
 import Image from "next/image";
 import { cn } from "./utils";
+import Tab from "./Tab";
 
 const data = {
   id: 1,
@@ -28,38 +29,56 @@ function ProductDetail() {
   return (
     <section
       id="product-detail"
-      className="flex items-start px-4 xl:px-0 gap-8 w-full h-[530px] xl:max-w-7xl mb-16 mx-auto"
+      className="lg:flex block items-start justify-center lg:justify-start px-4 xl:px-0 gap-8 w-full h-[530px] xl:max-w-7xl mb-16 mx-auto"
     >
-      <div className="flex-1 shrink flex flex-col xl:flex-row gap-3 w-full">
-        <div className="flex order-2 xl:order-1 xl:flex-col w-full border justify-center xl:justify-start flex-row gap-3">
-          {data.images.map((img, i) => (
-            <div
-              key={i}
-              onClick={() => setShowImage(img)}
-              className={cn(
-                "xl:max-h-[167px] flex-1 rounded-3xl flex items-center justify-center aspect-square bg-[#f0f0f0]",
-                showImage === img ? "ring-2 ring-black/50" : ""
-              )}
-            >
-              <Image
-                src={img}
-                alt="details"
-                width={444}
-                height={530}
-                className="object-cover w-auto h-full rounded-3xl"
-              />
-            </div>
-          ))}
-        </div>
-        <div className="flex-1 order-1 xl:order-2 border border-red-500 h-[530px] w-[444px] mx-auto overflow-hidden rounded-3xl">
+      <div className="lg:flex hidden flex-col gap-2 h-full">
+        {data.images.map((img, i) => (
+          <div
+            key={i}
+            className="aspect-square bg-[#f0f0f0] overflow-hidden rounded-xl"
+            onClick={() => {
+              setShowImage(img);
+            }}
+          >
+            <Image
+              className="aspect-square object-cover"
+              src={img}
+              alt={img}
+              width={100}
+              height={100}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="w-[444px] lg:block flex justify-self-center lg:shrink-0 h-full rounded-3xl overflow-hidden">
+        <div className="w-full h-[530px] overflow-hidden">
           <Image
             src={showImage}
             alt="details"
             width={444}
             height={530}
-            className="object-cover object-center w-full h-full rounded-3xl"
+            className="object-cover h-full w-full"
           />
         </div>
+      </div>
+      <div className="lg:hidden flex gap-2 h-max w-full justify-center my-4">
+        {data.images.map((img, i) => (
+          <div
+            key={i}
+            className="aspect-square bg-[#f0f0f0] overflow-hidden rounded-xl"
+            onClick={() => {
+              setShowImage(img);
+            }}
+          >
+            <Image
+              className="aspect-square object-cover"
+              src={img}
+              alt={img}
+              width={100}
+              height={100}
+            />
+          </div>
+        ))}
       </div>
       <Description />
     </section>
@@ -69,8 +88,10 @@ function ProductDetail() {
 export default ProductDetail;
 
 const Description = () => (
-  <div className="flex-1 shrink-0 flex-grow hidden min-h-full lg:flex flex-col justify-between">
-    <h1 className="font-header -mt-4 font-bold text-[40px]">{data.name}</h1>
+  <div className="flex-1 flex-grow min-h-full max-w-lg lg:max-w-3xl flex justify-self-center flex-col justify-between">
+    <h1 className="font-header leading-12 font-bold text-[40px]">
+      {data.name}
+    </h1>
     <div className="flex items-center gap-3">
       <StarRating rating={data.rating} />
       <p>
