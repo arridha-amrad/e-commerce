@@ -1,6 +1,4 @@
-import { baseUrl } from "@/config";
-import StarRating from "@/StarRating";
-import Image from "next/image";
+import ProductDetail from "@/ProductDetail";
 
 function Page() {
   return (
@@ -8,7 +6,7 @@ function Page() {
       <div className="xl:max-w-7xl mx-auto bg-black/10 h-px" />
       <section
         id="breadcumb"
-        className="flex xl:max-w-7xl mx-auto font-light py-6 text-black/50 items-center gap-2"
+        className="flex xl:max-w-7xl mx-auto xl:px-0 px-4 font-light py-6 justify-center lg:justify-start text-black/50 items-center gap-2"
       >
         <p>Home</p>
         <ChevronRight />
@@ -18,74 +16,7 @@ function Page() {
         <ChevronRight />
         <p className="text-black">T-Shirts</p>
       </section>
-      <section
-        id="product-detail"
-        className="flex items-start gap-4 xl:max-w-7xl mb-16 mx-auto"
-      >
-        <div className="flex-1 flex gap-3 w-full">
-          <div className="flex flex-col gap-3">
-            <div className="h-[167px] rounded-3xl flex items-center justify-center aspect-square bg-[#f0f0f0]">
-              <Image
-                src={`${baseUrl}/product-details/image 1.jpg`}
-                alt="details"
-                width={444}
-                height={530}
-                className="object-cover w-auto h-full rounded-3xl"
-              />
-            </div>
-            <div className="h-[167px] flex items-center justify-center rounded-3xl aspect-square bg-[#f0f0f0]">
-              <Image
-                src={`${baseUrl}/product-details/image 5.jpg`}
-                alt="details"
-                width={444}
-                height={530}
-                className="object-cover w-auto h-full rounded-3xl"
-              />
-            </div>
-            <div className="h-[167px] flex items-center justify-center rounded-3xl aspect-square bg-[#f0f0f0]">
-              <Image
-                src={`${baseUrl}/product-details/image 6.jpg`}
-                alt="details"
-                width={444}
-                height={530}
-                className="object-cover w-auto h-full rounded-3xl"
-              />
-            </div>
-          </div>
-          <div className="flex-1 bg-[#f0f0f0] overflow-hidden rounded-3xl">
-            <Image
-              src={`${baseUrl}/product-details/image 1.jpg`}
-              alt="details"
-              width={444}
-              height={530}
-              className="object-cover w-auto h-full rounded-3xl"
-            />
-          </div>
-        </div>
-        <div className="flex-1 space-y-3">
-          <h1 className="font-header -mt-4 font-bold text-[40px]">
-            One Life Graphic Tshirt
-          </h1>
-          <div className="flex items-center gap-3">
-            <StarRating rating={4.5} />
-            <p>
-              4.5/<span className="text-black/50">5</span>
-            </p>
-          </div>
-          <div className="flex items-center gap-4">
-            <h1 className="font-bold text-3xl">$260</h1>
-            <h1 className="font-bold text-3xl text-black/50">$260</h1>
-            <div className="w-[72px] h-[34px] rounded-full bg-[#ff3333]/10 flex items-center justify-center font-medium text-red-500">
-              -40%
-            </div>
-          </div>
-          <p className="font-light">
-            This graphic t-shirt which is perfect for any occasion. Crafted from
-            a soft and breathable fabric, it offers superior comfort and style.
-          </p>
-          <div className="w-full h-px bg-black/10" />
-        </div>
-      </section>
+      <ProductDetail />
     </>
   );
 }

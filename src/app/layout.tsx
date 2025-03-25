@@ -39,7 +39,7 @@ export default function RootLayout({
           {children}
           <div className="relative">
             {/* <NewsLetter /> */}
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </body>
