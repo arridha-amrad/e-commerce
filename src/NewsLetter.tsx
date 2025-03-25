@@ -2,7 +2,7 @@ function NewsLetter() {
   return (
     <section
       id="news-letter"
-      className="bg-black xl:absolute relative px-16 gap-12 xl:top-1/2 rounded-[20px] xl:-translate-y-[80%] left-1/2 -translate-x-1/2 flex lg:flex-row flex-col items-center justify-center xl:max-w-7xl w-full xl:h-[180px] xl:py-0 py-10"
+      className="bg-black xl:absolute relative px-16 gap-12 xl:-top-[20%] xl:rounded-[20px] left-1/2 -translate-x-1/2 flex lg:flex-row flex-col items-center justify-center xl:max-w-7xl w-full xl:h-[180px] xl:py-0 py-10"
     >
       <div className="xl:flex-3">
         <h1 className="font-header font-bold text-[40px] text-white">

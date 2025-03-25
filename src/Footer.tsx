@@ -1,9 +1,9 @@
 function Footer() {
   return (
-    <div className="bg-[#f0f0f0] py-10">
+    <div className="bg-[#f0f0f0]">
       <footer
         id="footer"
-        className="w-full lg:max-w-7xl px-4 mx-auto xl:h-[500px] flex items-center justify-center flex-col pt-16 bg-[#f0f0f0]"
+        className="w-full lg:max-w-7xl px-4 mx-auto xl:h-[500px] flex items-center justify-center py-16 xl:py-0 flex-col bg-[#f0f0f0]"
       >
         <div className="block lg:hidden">
           <FooterInfo />
@@ -49,7 +49,7 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="h-px xl:max-w-7xl mx-auto mt-12 mb-8 bg-black/10" />
+        <div className="h-px relative w-full my-12 mx-auto bg-black/10" />
         <div className="flex lg:flex-row lg:gap-0 gap-4 flex-col xl:max-w-7xl w-full mx-auto items-center justify-between">
           <div className="lg:order-1 order-2">
             <p className="font-light">

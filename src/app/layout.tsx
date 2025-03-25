@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import Alert from "@/Alert";
+import Header from "@/Header";
+import Footer from "@/Footer";
+import NewsLetter from "@/NewsLetter";
 
 const satoshi = localFont({
   src: "./fonts/Satoshi-Variable.woff2",
@@ -29,7 +33,15 @@ export default function RootLayout({
       <body
         className={`${satoshi.variable} ${integralCF.variable} antialiased`}
       >
-        {children}
+        <div className="w-full">
+          <Alert />
+          <Header />
+          {children}
+          <div className="relative">
+            {/* <NewsLetter /> */}
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );

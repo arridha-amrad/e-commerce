@@ -26,11 +26,13 @@ const data = [
 
 function Testimony() {
   return (
-    <section id="testimony" className="mb-32 xl:px-0 px-4">
+    <section id="testimony" className="xl:pb-48 pb-10 xl:px-0 px-4">
       <div className="mt-16 mb-12 xl:max-w-7xl mx-auto">
-        <h1 className="font-header font-bold text-5xl">Our Happy Customers</h1>
+        <h1 className="font-header text-center xl:text-start font-bold text-5xl">
+          Our Happy Customers
+        </h1>
       </div>
-      <div className="xl:max-w-7xl mx-auto grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+      <div className="xl:max-w-7xl mx-auto grid lg:grid-cols-3 grid-cols-1 gap-4 grid-rows-1">
         {data.map((v) => (
           <article
             key={v.id}

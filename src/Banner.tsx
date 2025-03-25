@@ -17,7 +17,7 @@ function Banner() {
             className="w-full h-full object-cover bg-transparent"
           />
         </div>
-        <div className="max-w-[577px] space-y-6 relative">
+        <div className="max-w-xl space-y-6 relative">
           <h1 className="uppercase font-header text-6xl">
             FIND CLOTHES THAT MATCHES YOUR STYLE
           </h1>
@@ -31,17 +31,17 @@ function Banner() {
           </button>
           <div className="flex xl:items-center items-start relative justify-start gap-6">
             <div className="">
-              <h1 className="font-bold text-xl xl:text-5xl">200+</h1>
+              <h1 className="font-bold text-xl xl:text-4xl">200+</h1>
               <p className="text-sm xl:text-base">International Brands</p>
             </div>
             <div className="bg-black/10 w-px h-full relative" />
             <div className="">
-              <h1 className="font-bold text-xl xl:text-5xl">2,000+</h1>
+              <h1 className="font-bold text-xl xl:text-4xl">2,000+</h1>
               <p className="text-sm xl:text-base">High-quality Products</p>
             </div>
             <div className="bg-black/10 w-px h-full relative" />
             <div className="">
-              <h1 className="font-bold text-xl xl:text-5xl">30,000+</h1>
+              <h1 className="font-bold text-xl xl:text-4xl">30,000+</h1>
               <p className="text-sm xl:text-base">Happy Customers</p>
             </div>
           </div>
@@ -51,14 +51,14 @@ function Banner() {
           height={104}
           src={`${baseUrl}/Blink-big.png`}
           alt="blink-blink big"
-          className="absolute top-20 right-20 xl:block hidden"
+          className="absolute top-20 right-0 xl:block hidden"
         />
         <Image
           width={56}
           height={56}
           src={`${baseUrl}/Blink-small.png`}
           alt="blink-blink small"
-          className="absolute top-1/2 xl:block hidden -translate-y-1/2 right-1/2 translate-x-10"
+          className="absolute top-1/2 xl:block hidden -translate-y-1/2 right-1/2 translate-x-20"
         />
       </div>
     </section>
