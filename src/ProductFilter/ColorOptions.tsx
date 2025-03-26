@@ -50,7 +50,7 @@ export default function ColorOptions() {
               value={selected}
               onChange={setSelected}
               aria-label="Server size"
-              className="flex flex-wrap w-full justify-between items-center gap-3"
+              className="flex flex-wrap w-full items-center gap-3"
             >
               {colors.map((color) => (
                 <Field key={color} className="flex items-center gap-2">

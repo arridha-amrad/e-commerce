@@ -1,6 +1,10 @@
+"use client";
+
 import { Input } from "@headlessui/react";
+import { useRouter } from "next/navigation";
 
 function Header() {
+  const router = useRouter();
   return (
     <header className="h-[6rem] xl:w-7xl w-full xl:px-0 px-4 mx-auto flex items-center justify-between">
       <button className="md:hidden block">
@@ -66,7 +70,7 @@ function Header() {
             </svg>
           </button>
         </div>
-        <button>
+        <button onClick={() => router.push("/cart")}>
           <svg
             width="23"
             height="22"

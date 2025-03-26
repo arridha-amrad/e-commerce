@@ -37,10 +37,10 @@ export default function RootLayout({
           <Alert />
           <Header />
           {children}
-          {/* <div className="relative">
+          <div className="relative">
             <NewsLetter />
             <Footer />
-          </div> */}
+          </div>
         </div>
       </body>
     </html>

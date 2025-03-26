@@ -8,7 +8,7 @@ function ProductFilter() {
   return (
     <section
       id="products-filter"
-      className="basis-[295px] h-max flex flex-col gap-4 p-6 shrink-0 border border-black/10 rounded-3xl"
+      className="w-full h-max md:flex flex-col gap-4 p-6 shrink-0 border border-black/10 rounded-3xl"
     >
       <div className="flex justify-between">
         <h1 className="font-bold text-xl">Filter</h1>
@@ -28,7 +28,7 @@ function ProductFilter() {
           </svg>
         </button>
       </div>
-      <hr className="border-black/10" />
+      <hr className="border-black/10 my-4" />
       <div className="space-y-4">
         <div className="flex justify-between items-center">
           <h1>T-Shirts</h1>
@@ -59,7 +59,7 @@ function ProductFilter() {
       <SizeOptions />
       <hr className="border-black/10 my-4" />
       <DressedStyles />
-      <button className="h-12 bg-black rounded-full w-full text-white">
+      <button className="h-12 my-4 bg-black rounded-full w-full text-white">
         Apply Filter
       </button>
     </section>

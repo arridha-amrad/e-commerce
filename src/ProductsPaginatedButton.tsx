@@ -1,7 +1,46 @@
-function ProductPaginatedButton() {
+interface Props {
+  totalPages: number;
+  currentPage: number;
+}
+
+function ProductPaginatedButton({ totalPages, currentPage }: Props) {
+  const renderPageNumbers = () => {
+    let pageNumbers: (number | string)[] = [];
+    const firstThree: number[] = [];
+    const lastThree: number[] = [];
+
+    if (totalPages <= 6) {
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+      }
+    } else {
+      if (currentPage > 1) {
+        if (currentPage >= totalPages - 2) {
+          firstThree.push(1, 2, 3);
+        } else {
+          firstThree.push(currentPage - 1, currentPage, currentPage + 1);
+        }
+      } else {
+        firstThree.push(1, 2, 3);
+      }
+
+      if (totalPages > 6) {
+        pageNumbers.push("...");
+      }
+
+      if (totalPages > 6) {
+        lastThree.push(totalPages - 2, totalPages - 1, totalPages);
+      }
+
+      pageNumbers = [...firstThree, ...pageNumbers, ...lastThree];
+    }
+
+    const unique = new Set(pageNumbers);
+    return Array.from(unique);
+  };
   return (
     <div className="flex items-center justify-between">
-      <button className="flex items-center gap-2 border border-black/10 rounded-xl h-10 px-6">
+      <button className="flex items-center justify-center gap-2 border border-black/10 rounded-xl h-10 aspect-square md:aspect-auto md:px-6">
         <svg
           width="14"
           height="14"
@@ -17,15 +56,23 @@ function ProductPaginatedButton() {
             strokeLinejoin="round"
           />
         </svg>
-        Previous
+        <span className="lg:block hidden">Previous</span>
       </button>
-      {[...Array(10)].map((_, i) => (
-        <button className="bg-[#f0f0f0] size-10 rounded-xl" key={i}>
-          {i + 1}
-        </button>
-      ))}
-      <button className="flex items-center gap-2 border border-black/10 rounded-xl h-10 px-6">
-        Next
+      <div>
+        {renderPageNumbers().map((page, index) => (
+          <button
+            key={index}
+            className={`size-10 rounded-xl ${
+              currentPage === page ? "bg-[#f0f0f0] text-black" : "text-black/40"
+            }`}
+            disabled={typeof page !== "number"}
+          >
+            {page}
+          </button>
+        ))}
+      </div>
+      <button className="flex items-center justify-center gap-2 border border-black/10 rounded-xl h-10 aspect-square md:aspect-auto md:px-6">
+        <span className="lg:block hidden">Next</span>
         <svg
           width="14"
           height="14"
