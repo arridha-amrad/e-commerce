@@ -7,7 +7,6 @@ import SizeOptions from "./SizeOptions";
 import StarRating from "./StarRating";
 import Image from "next/image";
 import { cn } from "./utils";
-import Tab from "./Tab";
 
 const data = {
   id: 1,
@@ -29,13 +28,16 @@ function ProductDetail() {
   return (
     <section
       id="product-detail"
-      className="lg:flex block items-start justify-center lg:justify-start px-4 xl:px-0 gap-8 w-full h-[530px] xl:max-w-7xl mb-16 mx-auto"
+      className="lg:flex block items-start justify-center lg:justify-start px-4 xl:px-0 gap-8 w-full lg:min-h-[530px] xl:max-w-7xl mb-16 mx-auto"
     >
       <div className="lg:flex hidden flex-col gap-2 h-full">
         {data.images.map((img, i) => (
           <div
             key={i}
-            className="aspect-square bg-[#f0f0f0] overflow-hidden rounded-xl"
+            className={cn(
+              "aspect-square bg-[#f0f0f0] overflow-hidden rounded-xl",
+              img === showImage && "ring-2 ring-black/40"
+            )}
             onClick={() => {
               setShowImage(img);
             }}
@@ -88,8 +90,11 @@ function ProductDetail() {
 export default ProductDetail;
 
 const Description = () => (
-  <div className="flex-1 flex-grow min-h-full max-w-lg lg:max-w-3xl flex justify-self-center flex-col justify-between">
-    <h1 className="font-header leading-12 font-bold text-[40px]">
+  <div className="flex-1 flex-grow min-h-full max-w-lg lg:max-w-3xl gap-4 flex justify-self-center flex-col justify-between">
+    <h1
+      title={data.name}
+      className="font-header leading-12 font-bold line-clamp-2 text-[40px]"
+    >
       {data.name}
     </h1>
     <div className="flex items-center gap-3">

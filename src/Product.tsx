@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import StarRating from "./StarRating";
+import { useRouter } from "next/navigation";
 
 type Product = {
   imageUrl: string;
@@ -16,15 +19,19 @@ type Props = {
 function Product({
   product: { discount, imageUrl, name, price, rating },
 }: Props) {
+  const router = useRouter();
   return (
-    <div className="relative overflow-hidden space-y-2">
-      <div className="overflow-hidden">
+    <div
+      onClick={() => router.push(`/products/123`)}
+      className="relative w-full overflow-hidden space-y-2"
+    >
+      <div className="overflow-hidden w-full">
         <Image
           src={imageUrl}
           alt="new arrivals"
           width={300}
           height={300}
-          className="rounded-[20px] aspect-square"
+          className="rounded-[20px] w-full h-full object-cover aspect-square"
         />
       </div>
       <h1 className="font-bold xl:text-[20px]">{name}</h1>
