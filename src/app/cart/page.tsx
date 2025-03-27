@@ -33,7 +33,7 @@ const carts = [
 
 function Page() {
   return (
-    <main className="xl:max-w-7xl w-full mx-auto xl:px-0 px-4">
+    <main className="xl:max-w-7xl w-full mx-auto px-4">
       <div className="w-full h-px bg-[#f0f0f0] mx-auto"></div>
       <section
         id="breadcrumb"

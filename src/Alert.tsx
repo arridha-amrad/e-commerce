@@ -1,8 +1,8 @@
 function Alert() {
   return (
     <section className="bg-black">
-      <div className="h-[2.4rem] xl:w-7xl xl:px-0 px-4 mx-auto bg-black text-white flex items-center justify-center">
-        <p className="flex-1 text-center">
+      <div className="h-[2.4rem] xl:w-7xl px-4 mx-auto bg-black text-white flex items-center justify-center gap-2">
+        <p className="flex-1 text-center text-sm md:text-base">
           Sign up and get 20% off to your first order.
           <span className="pl-1 underline font-semibold">Sign Up Now</span>
         </p>

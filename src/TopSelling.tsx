@@ -39,7 +39,7 @@ const data = [
 function TopSelling() {
   return (
     <section
-      className="xl:max-w-7xl xl:px-0 px-4 mx-auto xl:py-16 py-8"
+      className="xl:max-w-7xl px-4 mx-auto xl:py-16 py-8"
       id="new_arrivals"
     >
       <div className="mb-16">

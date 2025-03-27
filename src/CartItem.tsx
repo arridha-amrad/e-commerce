@@ -20,7 +20,7 @@ function CartItem({ item: { color, imageUrl, name, price, size } }: Props) {
   const [counter, setCounter] = useState(1);
   return (
     <article className="flex gap-4 h-max">
-      <div className="size-[124px] shrink-0 rounded-3xl overflow-hidden">
+      <div className="lg:size-[124px] size-[90px] shrink-0 rounded-3xl overflow-hidden">
         <Image
           width={250}
           height={250}
@@ -30,7 +30,7 @@ function CartItem({ item: { color, imageUrl, name, price, size } }: Props) {
         />
       </div>
       <div className="w-full flex flex-col justify-between">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row justify-between sm:items-center">
           <h1 className="font-bold text-xl line-clamp-1">{name}</h1>
           <button className="size-4 rounded-full flex items-center justify-center">
             <svg
@@ -55,9 +55,9 @@ function CartItem({ item: { color, imageUrl, name, price, size } }: Props) {
             Color : <span className="text-black/50">{color}</span>
           </p>
         </div>
-        <div className="flex justify-between items-center w-full">
+        <div className="flex flex-col gap-1 sm:flex-row justify-between sm:items-center w-full">
           <h2 className="font-bold text-2xl">${price * counter}</h2>
-          <div className="h-12 flex items-center rounded-full bg-[#f0f0f0]">
+          <div className="sm:h-12 h-10 flex w-max items-center rounded-full bg-[#f0f0f0]">
             <button
               onClick={() => {
                 if (counter === 1) return;

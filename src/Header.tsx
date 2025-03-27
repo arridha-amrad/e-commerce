@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 function Header() {
   const router = useRouter();
   return (
-    <header className="h-[6rem] xl:w-7xl w-full xl:px-0 px-4 mx-auto flex items-center justify-between">
+    <header className="h-[6rem] xl:w-7xl w-full px-4 mx-auto flex items-center justify-between">
       <button className="md:hidden block">
         <svg
           width="20"

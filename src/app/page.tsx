@@ -1,5 +1,5 @@
 import Banner from "@/Banner";
-import Brands from "@/Braands";
+import Brands from "@/Brands";
 import DressedStyles from "@/DressedStyles";
 import NewArrivals from "@/NewArrivals";
 import Testimony from "@/Testimony";

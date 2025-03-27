@@ -74,7 +74,7 @@ const faqs = [
 
 const FAQS = () => {
   return (
-    <div className="px-4 xl:px-0">
+    <div className="px-4">
       <div className="w-full">
         <div className="py-6">
           <h1 className="font-bold text-2xl">FAQs</h1>
@@ -119,7 +119,7 @@ const FAQS = () => {
 
 const ProductDetails = () => {
   return (
-    <div className="xl:px-0 px-4 py-6">
+    <div className="px-4 py-6">
       <h1 className="font-bold text-2xl">One Life Graphic Tshirt</h1>
       <p className="leading-relaxed pt-4">
         <span className="font-medium">Material:</span> Cotton Combed 30s Made
@@ -216,7 +216,7 @@ const reviews = [
 
 const Reviews = () => {
   return (
-    <div className="px-4 xl:px-0">
+    <div className="px-4">
       <div className="flex lg:flex-row flex-col gap-4 lg:gap-0 py-6 items-center justify-between">
         <div className="flex items-center justify-center gap-3">
           <h1 className="font-bold text-2xl">All Reviews</h1>

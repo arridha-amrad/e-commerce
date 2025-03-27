@@ -9,7 +9,7 @@ function Page() {
       <div className="xl:max-w-7xl mx-auto bg-black/10 h-px" />
       <section
         id="breadcrumb"
-        className="flex xl:max-w-7xl mx-auto xl:px-0 px-4 font-light py-6 justify-center lg:justify-start text-black/50 items-center gap-2"
+        className="flex xl:max-w-7xl mx-auto px-4 font-light py-6 justify-center lg:justify-start text-black/50 items-center gap-2"
       >
         <p>Home</p>
         <ChevronRight />

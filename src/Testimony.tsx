@@ -26,7 +26,7 @@ const data = [
 
 function Testimony() {
   return (
-    <section id="testimony" className="xl:pb-48 pb-10 xl:px-0 px-4">
+    <section id="testimony" className="xl:pb-48 pb-10 px-4">
       <div className="mt-16 mb-12 xl:max-w-7xl mx-auto">
         <h1 className="font-header text-center xl:text-start font-bold text-5xl">
           Our Happy Customers

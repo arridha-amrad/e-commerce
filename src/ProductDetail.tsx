@@ -28,7 +28,7 @@ function ProductDetail() {
   return (
     <section
       id="product-detail"
-      className="lg:flex block items-start justify-center lg:justify-start px-4 xl:px-0 gap-8 w-full lg:min-h-[530px] xl:max-w-7xl mb-16 mx-auto"
+      className="lg:flex block items-start justify-center lg:justify-start px-4 gap-8 w-full lg:min-h-[530px] xl:max-w-7xl mb-16 mx-auto"
     >
       <div className="lg:flex hidden flex-col gap-2 h-full">
         {data.images.map((img, i) => (

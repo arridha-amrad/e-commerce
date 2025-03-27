@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { baseUrl } from "./config";
-
 function Brands() {
   return (
     <section
