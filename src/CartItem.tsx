@@ -2,22 +2,18 @@
 
 import Image from "next/image";
 import { useState } from "react";
-
-export type Item = {
-  id: number;
-  name: string;
-  size: string;
-  color: string;
-  imageUrl: string;
-  price: number;
-};
+import { Item, useCartStore } from "./app/cart/store";
 
 type Props = {
   item: Item;
 };
 
-function CartItem({ item: { color, imageUrl, name, price, size } }: Props) {
-  const [counter, setCounter] = useState(1);
+function CartItem({
+  item: { color, id, imageUrl, name, price, size, quantity },
+}: Props) {
+  const addQuantity = useCartStore((store) => store.addQuantity);
+  const substractQuantity = useCartStore((store) => store.substractQuantity);
+
   return (
     <article className="flex gap-4 h-max">
       <div className="lg:size-[124px] size-[90px] shrink-0 rounded-3xl overflow-hidden">
@@ -56,12 +52,12 @@ function CartItem({ item: { color, imageUrl, name, price, size } }: Props) {
           </p>
         </div>
         <div className="flex flex-col gap-1 sm:flex-row justify-between sm:items-center w-full">
-          <h2 className="font-bold text-2xl">${price * counter}</h2>
+          <h2 className="font-bold text-2xl">${price * quantity}</h2>
           <div className="sm:h-12 h-10 flex w-max items-center rounded-full bg-[#f0f0f0]">
             <button
               onClick={() => {
-                if (counter === 1) return;
-                setCounter((val) => (val -= 1));
+                if (quantity === 1) return;
+                substractQuantity(id);
               }}
               className="size-full flex items-center justify-center"
             >
@@ -78,10 +74,10 @@ function CartItem({ item: { color, imageUrl, name, price, size } }: Props) {
                 />
               </svg>
             </button>
-            <h1 className="w-[100px] text-center font-medium">{counter}</h1>
+            <h1 className="w-[100px] text-center font-medium">{quantity}</h1>
             <button
               onClick={() => {
-                setCounter((val) => (val += 1));
+                addQuantity(id);
               }}
               className="size-full flex items-center justify-center"
             >

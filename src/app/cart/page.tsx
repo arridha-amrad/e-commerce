@@ -1,8 +1,7 @@
-import CartItem from "@/CartItem";
 import { baseUrl } from "@/config";
 import ChevronRight from "@/icons/ChevronRight";
 import OrderSummary from "@/OrderSummary";
-import { Fragment } from "react";
+import Carts from "./Carts";
 
 const carts = [
   {
@@ -12,6 +11,7 @@ const carts = [
     color: "White",
     imageUrl: `${baseUrl}/carts/cart1.jpg`,
     price: 145,
+    quantity: 1,
   },
   {
     id: 2,
@@ -20,6 +20,7 @@ const carts = [
     color: "Red",
     imageUrl: `${baseUrl}/carts/cart2.jpg`,
     price: 180,
+    quantity: 1,
   },
   {
     id: 3,
@@ -28,6 +29,7 @@ const carts = [
     color: "Blue",
     imageUrl: `${baseUrl}/carts/cart3.jpg`,
     price: 240,
+    quantity: 1,
   },
 ];
 
@@ -48,18 +50,9 @@ function Page() {
           Your Cart
         </h1>
         <div className="flex lg:flex-row flex-col pt-6 gap-8">
-          <div className="border space-y-8 flex-2 border-black/10 p-6 rounded-3xl">
-            {carts.map((cart, i) => (
-              <Fragment key={cart.id}>
-                <CartItem key={cart.id} item={cart} />
-                {i + 1 !== carts.length && (
-                  <div className="w-full h-px bg-black/10"></div>
-                )}
-              </Fragment>
-            ))}
-          </div>
+          <Carts items={carts} />
           <div className="w-full lg:max-w-md">
-            <OrderSummary deliveryFee={15} discount={20} items={carts} />
+            <OrderSummary deliveryFee={15} discount={20} />
           </div>
         </div>
       </section>

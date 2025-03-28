@@ -1,15 +1,15 @@
 "use client";
 
-import { Item } from "./CartItem";
+import { Item, useCartStore } from "./app/cart/store";
 
 type Props = {
-  items: Item[];
   discount: number | null;
   deliveryFee: number;
 };
 
-function OrderSummary({ items, discount, deliveryFee }: Props) {
-  const subtotal = items.reduce((pv, cv) => pv + cv.price, 0);
+function OrderSummary({ discount, deliveryFee }: Props) {
+  const items = useCartStore((store) => store.items);
+  const subtotal = items.reduce((pv, cv) => pv + cv.price * cv.quantity, 0);
   const afterDiscount = discount ? (subtotal * discount) / 100 : 0;
   const total = subtotal - afterDiscount + deliveryFee;
   return (
